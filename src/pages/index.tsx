@@ -1,24 +1,34 @@
-import { Geist, Geist_Mono } from "next/font/google";
-
 import useFetchData from "@/hooks/useFetchData";
+import { ImageCard } from "@/components/cards";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+type Data = {
+    url: string;
+    uuid: string;
+    title: string;
+    content_type: string;
+};
 
 export default function Home() {
-    const { data, loading } = useFetchData("images");
+    const { data, loading } = useFetchData("/images");
 
     console.log({ data, loading });
+    const buildData = (data: Data[]) =>
+        [...data, ...data]?.sort(() => Math.random() - 0.5);
+
     return (
-        <div
-            className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-        ></div>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <div className="text-center">
+                <h1>Juego Memorice</h1>
+                <div className="grid md:grid-cols-8 sm:grid-cols-4 gap-5 mt-5">
+                    {buildData(data)?.map(({ url }) => (
+                        <ImageCard
+                            src={url}
+                            onClick={() => console.log("click")}
+                            visible={true}
+                        />
+                    ))}
+                </div>
+            </div>
+        </main>
     );
 }
