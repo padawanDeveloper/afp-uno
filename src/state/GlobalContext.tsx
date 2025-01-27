@@ -6,13 +6,14 @@ type User = {
 
 export interface ContextType {
     user: User;
-    dispatch: () => void;
+    dispatch: (obj: any) => void;
 }
 
 export const init = {
     user: {
         name: "",
     },
+    dispatch: () => null,
 };
 
-export default React.createContext<ContextType | null>(null);
+export default React.createContext<ContextType>(init);
