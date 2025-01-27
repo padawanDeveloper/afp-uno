@@ -29,7 +29,7 @@ const UserModal = () => {
         validationSchema: Yup.object({
             name: Yup.string()
                 .min(5, "Mas de 5 caracteres")
-                .required("Required"),
+                .required("Requerido"),
         }),
     });
 
@@ -49,6 +49,9 @@ const UserModal = () => {
                     className="mt-1 text-black block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     placeholder=""
                 />
+                <p className="mt-1 text-red-500 ">
+                    {!!formik?.errors?.name && formik?.errors?.name}
+                </p>
             </div>
         </Modal>
     );
