@@ -11,6 +11,7 @@ const UserModal = () => {
 
     const handleModal = () => setOpen(!open);
 
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     const handleSubmit = (values: any) => {
         dispatch({
             type: "SET_USER",
