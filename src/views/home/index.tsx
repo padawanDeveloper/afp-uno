@@ -56,7 +56,7 @@ export default function Home() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <>
             <div className="text-center">
                 <h1>Juego Memorice</h1>
                 <h2 className="p-5">
@@ -93,6 +93,6 @@ export default function Home() {
                 </button>
             </div>
             <UserModal />
-        </main>
+        </>
     );
 }
