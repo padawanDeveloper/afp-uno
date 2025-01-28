@@ -9,7 +9,7 @@ type Props = {
 const GlobalState = ({ children }: Props) => {
     const [state, dispatch] = useReducer(UserReducer, init);
 
-    let initialValue = {
+    const initialValue = {
         ...state,
         dispatch,
     };

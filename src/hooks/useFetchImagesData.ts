@@ -15,6 +15,7 @@ const useFetchData = (url: string) => {
                 () => Math.random() - 0.5
             );
             setData(newData);
+            /* eslint-disable  @typescript-eslint/no-explicit-any */
         } catch (err: any) {
             setError(err.message);
         } finally {

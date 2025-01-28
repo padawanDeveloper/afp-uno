@@ -4,6 +4,7 @@ type User = {
     name: string;
 };
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface ContextType {
     user: User;
     dispatch: (obj: any) => void;
