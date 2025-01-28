@@ -2,6 +2,8 @@
 
 > **Note**: Clonar repositorio [Prueba afp uno](https://github.com/padawanDeveloper/afp-uno.git)
 
+### https://github.com/padawanDeveloper/afp-uno.git
+
 ## Step 1: Instalar dependencias
 
 ```bash
