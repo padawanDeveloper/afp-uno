@@ -73,6 +73,7 @@ export default function Home() {
                     <div className="grid md:grid-cols-8 sm:grid-cols-4 gap-5 mt-5">
                         {data?.map(({ url }: Data, index: number) => (
                             <ImageCard
+                                index={index}
                                 key={index}
                                 src={url}
                                 onClick={() => handleClick(index)}
